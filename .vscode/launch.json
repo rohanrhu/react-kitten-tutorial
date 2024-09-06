@@ -2,10 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "./node_modules/.bin/astro dev",
+      "type": "node-terminal",
+      "command": "npm start",
       "name": "Development Server",
       "request": "launch",
-      "type": "node-terminal"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chrome",
+      "url": "http://localhost:4321",
+      "webRoot": "${workspaceFolder}",
+      "outputCapture": "std"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Server and Browser",
+      "configurations": ["Development Server", "Chrome"]
     }
   ]
 }

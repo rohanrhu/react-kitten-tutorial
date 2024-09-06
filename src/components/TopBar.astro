@@ -1,0 +1,86 @@
+---
+import '@fontsource-variable/merienda'
+---
+
+<nav>
+  <div class="logo">
+    <div class="logo_image">
+      <img src="/kitten.png" alt="React Kitten Logo" />
+    </div>
+    <div class="logo_label">
+      <span class="colorful">React﹤Kitten﹥</span> Tutorial
+    </div>
+  </div>
+
+  <div class="links">
+    <div class="links_link">
+      <a href="https://kitten.meowingcat.io" target="_blank">React﹤Kitten﹥</a>
+    </div>
+    <div class="links_link">
+      <a href="https://github.com/rohanrhu/react-kitten" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <slot name="theme-switch" />
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--tk-elements-topBar-backgroundColor);
+    color: var(--color-white);
+    border-bottom: 1px solid var(--tk-elements-app-borderColor);
+    font-family: 'Merienda Variable', cursive;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    color: var(--tk-elements-topBar-logo-color);
+    display: flex;
+    align-items: center;
+  }
+
+  .logo_image {
+    margin-right: 1rem;
+  }
+
+  .logo_image img {
+    height: 40px;
+  }
+
+
+  .logo_label {
+  }
+
+  a, a:visited {
+    color: var(--tk-elements-topBar-link-color);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-grow: 1;
+    gap: 1rem;
+    padding: 0px 1rem;
+  }
+
+  .links_link a,
+  .links_link a:visited {
+    color: var(--tk-text-primary);
+  }
+  
+  .colorful {
+    background: linear-gradient(#db419b,#6b345a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--tk-text-primary);
+  }
+</style>

@@ -1,38 +1,54 @@
 ---
 type: lesson
-title: Welcome to TutorialKit
-focus: /counter.js
+title: Welcome to React﹤Kitten﹥
+focus: /src/App.tsx
+slug: welcome
 ---
 
-# Welcome to TutorialKit
+# Welcome to React﹤Kitten﹥
 
-Hey there, and welcome to TutorialKit 👋!
+In this tutorial, you will learn how to build beatiful windowed applications with React﹤Kitten﹥.
 
-To kick things off, we have prepared a small demo lesson for you, where we'll dive into the concept of event handling in JavaScript. Our task is to resuscitate a lifeless counter app by introducing the crucial element of interactivity: **event listeners**.
+Kitten is a Desktop Environment &amp; Window Manager for React. It provides a set of components and hooks to build windowed applications with ease.
 
-Let's look at the preview on the right for a moment and try to click on the button that says `counter is 0`. We'll notice that it doesn't work.
+In this tutorial, you will learn how to build a simple windowed application with React﹤Kitten﹥.
 
-In the code for `counter.js`, which you can find on the right, we have a `setupCounter` function responsible for initializing our counter app. However, a crucial component is missing: an event listener for the button.
+> In this tutorial, you'll see also API references for each component and hook. Please follow the tutorial step by step to understand how to use them.
 
-Event listeners are essential in web development as they enable our applications to respond to user actions. In this case, we need to listen for clicks on the button to increment the counter.
+Let's get started!
 
-To address this, we'll call the `addEventListener` to attach a `click` event listener to the button element. When a click is detected, we'll execute a callback function that increments the counter and updates the `innerHTML` accordingly.
+## Install React﹤Kitten﹥
 
-```ts add={9}
-export function setupCounter(element) {
-  let counter = 0;
+To get started, you need to install React﹤Kitten﹥. You can install it using npm or yarn in your existing React project.
 
-  const setCounter = (count) => {
-    counter = count;
-    element.innerHTML = `count is ${counter}`;
-  };
+```bash
+npm install react-kitten
+```
 
-  element.addEventListener('click', () => setCounter(counter + 1));
+That's all! Now you are ready to build your first windowed application with React﹤Kitten﹥.
 
-  setCounter(0);
+This first example shows how to create a simple windowed application with React﹤Kitten﹥.
+
+We are using `BasicWindow` in this first simple example. `BasicWindow` works with initial props; it is an easier way if you need a very basic window.
+
+```tsx
+function App() {
+  const [size, setSize] = useState<[number, number]>([
+    window.innerWidth,
+    window.innerHeight,
+  ])
+  const [space, setSpace] = useState(0)
+
+  return <Manager size={size}>
+    <Spaces space={space} onSpaceChange={setSpace}>
+      <Space>
+        <BasicWindow>Hello World!</BasicWindow>
+      </Space>
+    </Spaces>
+  </Manager>
 }
 ```
 
-This gives you a sneak peak of the TutorialKit experience, demonstrating what it's capable of.
+In this example, we are using `Manager`, `Spaces`, `Space`, and `BasicWindow` components. `Manager` is the main componenet *(like "Window Manager")*, `Spaces` is the container for `Space` components, `Space` is the container for any elements including `Window` and `BasicWindow` components.
 
-Happy writing!
+That's all! You have built your first windowed application with React﹤Kitten﹥.

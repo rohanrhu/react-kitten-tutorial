@@ -11,9 +11,11 @@
     "start": "astro dev"
   },
   "dependencies": {
+    "@fontsource-variable/merienda": "^5.0.14",
     "@tutorialkit/react": "0.2.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-kitten": "^0.3.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.7.0",

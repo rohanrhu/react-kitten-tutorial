@@ -1,0 +1,76 @@
+---
+type: lesson
+title: Creating Spaces
+focus: /src/App.tsx
+slug: creating-spaces
+---
+
+# Spaces
+
+Kitten is a Desktop Manager, which means it can manage multiple desktops, or "spaces". This is a feature that is common in many operating systems, and it allows you to organize your windows into different groups. This can be useful for organizing your work, or for separating different tasks.
+
+## Creating Spaces
+
+You can create spaces by putting `Space` compoments inside the `Spaces` component. Here is an example:
+
+```tsx
+function App() {
+  const [size] = useState<[number, number]>([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+  const [space, setSpace] = useState(0);
+
+  return (
+    <Manager size={size}>
+      <Spaces space={space} onSpaceChange={setSpace}>
+        <Space>
+            <h1>Tabby Cat</h1>
+            <p>The tabby cat is the most common pattern of coat, featuring stripes, swirls, and spots. Tabby cats are not a breed, but the most common coat pattern in domestic cats. The tabby pattern is found in many breeds, including the Abyssinian, American Shorthair, and Maine></p>
+        </Space>
+        <Space>
+            <h1>Jaguars</h1>
+            <p>he jaguar is the largest cat in the Americas. They are found in the rainforests of Central and South America. Jaguars are strong swimmers and climbers and are known for their powerful bite, which allows them to pierce the shells of armored reptiles.</p>
+        </Space>
+        <Space>
+            <h1>Siamese Cat</h1>
+            <p>The Siamese cat is one of the first distinctly recognized breeds of Asian cat. Derived from the Wichianmat landrace, one of several varieties of cat native to Thailand, the Siamese became one of the most popular breeds in Europe and North America in the 19th century.</p>
+        </Space>
+      </Spaces>
+
+    </Manager>
+  );
+}
+```
+
+This is how we can create a simple app with three spaces. Each space contains a title and a paragraph of text. You can switch between spaces by clicking on the space in the space bar at the top of the screen.
+
+By default, Kitten has mouse wheel switching enabled, so you can also switch between spaces by scrolling up and down with your mouse wheel.
+
+---
+
+## API Reference
+
+Spaces has a few options that you can use to customize its behavior.
+
+### `Spaces` Props
+
+| Name | Type | Default |
+| ---- | ---- | ------- |
+| `children` | `React.ReactNode` | `null` |
+| `bounceDelay` | `number` | `200` |
+| `scrollThreshold` | `number` | `200` |
+| `swipeThreshold` | `number` | `200` |
+| `space` | `number` | `0` |
+| `onSpaceChange` | `Function` | `() => {}` |
+| *{ ... HTML attributes }* | `any` | `{}` |
+
+## `Space` Props
+
+* (**children**) The content of the space (Example: `<Space>My Content</Space>`)
+* *{ ... HTML attributes }* Any other HTML attributes you want to pass to the space like `className`, `style`, etc.
+
+| Name | Type | Default |
+| ---- | ---- | ------- |
+| `children` | `React.ReactNode` | `null` |
+| *{ ... HTML attributes }* | `any` | `{}` |
