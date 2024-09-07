@@ -10,4 +10,5 @@ export default defineConfig({
       TopBar: './src/components/TopBar.astro',
     },
   })],
+  site: 'https://kitten-tutorial.meowingcat.io',
 });
