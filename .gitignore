@@ -11,3 +11,4 @@ pnpm-debug.log*
 .idea
 
 tools/deploy-cat.sh
+deploy.log
