@@ -95,7 +95,7 @@ function ListWindow({ title }: React.PropsWithChildren & { title?: string }) {
       </button>
     </div>}
     {openedCats.map((cat, i) => <BasicWindow key={i} title="Cat" initialSize={[400, 300]}>
-      <img src={`https://proxy.cors.sh/${cat}`} alt="cat" style={{ width: '100%', height: 'auto' }} crossOrigin="anonymous" />
+      <img src={cat} alt="cat" style={{ width: '100%', height: 'auto' }} crossOrigin="anonymous" />
     </BasicWindow>)}
   </>
 }
