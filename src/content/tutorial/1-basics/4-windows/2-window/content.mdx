@@ -104,10 +104,10 @@ Congratulations! 🥳 You've created a custom window component with `Window`.
 | `allowOutside?` | `bool` | `true` | If the window can go outside of the manager |
 | `compensatePositionOnViewportResize?` | `bool` | `true` | When the viewport is resized, the window will be repositioned to fit inside the manager |
 | `onStagedChange` | `(staged: boolean) => void` | `() => {}` | Callback for staged change |
-| `onSizeChange` | `(size: [number, number])` | `() => {}` | Callback for size change |
-| `onPositionChange` | `(position: [number, number])` | `() => {}` | Callback for position change |
-| `onMoveStart` | `() => {}` | `() => {}` | Callback for move start |
-| `onMoveEnd` | `() => {}` | `() => {}` | Callback for move end |
+| `onSizeChange` | `(size: [number, number], reason: 'user' \| 'system') => void` | `() => {}` | Callback for size change |
+| `onPositionChange` | `(position: [number, number], reason: 'user' \| 'system') => void` | `() => {}` | Callback for position change |
+| `onMoveStart` | `() => void` | `() => {}` | Callback for move start |
+| `onMoveEnd` | `() void` | `() => {}` | Callback for move end |
 
 ## Hooks for `Window`
 
